@@ -7,15 +7,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>デザインカフェ</title>
     <meta name="description" content="デザインカフェのサイトです。">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </head>
 
 <body>
     <header id="header">
         <div class="header_slider">
-
-            <div><img src="images/pc_first-100.jpg" alt=""></div>
+            <div>
+                <picture>
+                    <source media="(max-width:767px)" srcset="images/sp_main_vs@2x-100.jpg">
+                    <img src="images/pc_first-100.jpg" alt="店内の様子">
+                </picture>
+            </div>
+            <div>
+                <picture>
+                    <source media="(max-width:767px)" srcset="images/sp_main_vs2@2x-100.jpg">
+                    <img src="images/slider_2.jpg" alt="店内の様子">
+                </picture>
+            </div>
         </div>
+
         <div class="header_wrap">
             <h1 class="header_logo"><a href=""><img src="images/design_cafe_logo_header@2x.png" alt="DESIGN CAFE"></a>
             </h1>
@@ -28,93 +44,188 @@
                     <li><a href="">ACCESS</a></li>
                 </ul>
             </nav>
+            <div class="sp_btn"><span></span></div>
+            <nav class="sp_nav">
+                <ul>
+                    <li><a href="">ABOUT US</a></li>
+                    <li><a href="">MENU</a></li>
+                    <li><a href="">GALLERY</a></li>
+                    <li><a href="">EVENT</a></li>
+                    <li><a href="">ACCESS</a></li>
+                </ul>
+            </nav>
+
         </div>
     </header>
 
-    <div class="h2_wrap">
-        <h2 id="sentence">
-            <p class="sentence_first">Have a happy day From a cup of coffee.</p>
-            <p class="sentence_second">ハッピーに溢れる1日を
+    <main>
+        <div class="lead">
+            <p>Have a happy day From a cup of coffee.</p>
+            <p>ハッピーに溢れる1日を
                 <br>1杯のコーヒーから。
             </p>
-            <p class="sentence_third">毎日を丁寧に大切に過ごしたい。だからこそ一杯一杯丁寧にコーヒーを入れ
+            <p>毎日を丁寧に大切に過ごしたい。だからこそ一杯一杯丁寧にコーヒーを入れ
                 <br>足を運んでくれるお客さんには落ち着く空間とこだわりのコーヒーを提供したい。
             </p>
-        </h2>
-    </div>
-
-    <h3 id="about">
-        <div class="about_pic">
-            <div><img src="images/pc_about-100.jpg" alt=""></div>
         </div>
-        <div class="about_logo"><img src="images/about_us@2x.png" alt="ABOUT US"></div>
-        <div class="about_title">私たちが提供する
-            <br>こだわりのコーヒー
+
+
+        <section id="about" class="about">
+
+            <div class="about_block">
+                <h2>
+                    <img src="images/about_us@2x.png" alt="ABOUT US">
+                </h2>
+                <div class="about_img">
+                    <picture>
+                        <source media="(min-width: 768px)" srcset="images/pc_about-100.jpg">
+                        <source media="(max-width: 767px)" srcset="images/about_us@2x-100.jpg">
+                        <img src="images/pc_about-100.jpg" alt="イメージ写真">
+                    </picture>
+                </div>
+
+                <!-- ここでsrcsetがリンクにならないのはいいの？ -->
+
+                <h3>私たちが提供する
+                    <br>こだわりのコーヒー
+                </h3>
+                <p>サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。
+                    サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。
+                    サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。
+                    サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。
+                    サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。
+                </p>
+            </div>
+        </section>
+        <!-- お見本だとテキスト内に”があるのはなぜ？入れ込んでみたら、おかしくなった・・・ -->
+
+
+        <section id="menu" class="menu">
+            <h2>
+                <img src="images/menu@2x.png" alt="MENU">
+            </h2>
+            <div class="menu_block">
+                <div class="menu_item">
+                    <img src="images/drink_sp@2x-100.jpg" alt="Drink">
+                    <h3>Drink</h3>
+                    <p>ドリンクメニューの概要を100文字程度で紹介します。
+                        素材やこだわりなどをアピールしていきます。</p>
+                </div>
+
+                <div class="menu_item">
+                    <img src="images/food_sp@2x-100.jpg" alt="Food">
+                    <h3>Food</h3>
+                    <p>フードメニューの概要を100文字程度で紹介します。
+                        素材やこだわりなどをアピールしていきます。</p>
+                </div>
+
+
+                <div class="menu_item">
+                    <img src="images/cake_sp@2x-100.jpg" alt="Sweets">
+                    <h3>Sweets</h3>
+                    <p>スイーツメニューの概要を100文字程度で紹介します。
+                        素材やこだわりなどをアピールしていきます。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="gallery">
+            <h2>
+                <img src="images/gallery@2x.png" alt="GALLERY">
+            </h2>
+            <ul class="gallery_pic">
+                <li><img src="images/pc_gallary_05-100.jpg" alt=""></li>
+                <li><img src="images/pc_gallary_04-100.jpg" alt=""></li>
+                <li><img src="images/pc_gallary_03-100.jpg" alt=""></li>
+                <li><img src="images/pc_gallary_02-100.jpg" alt=""></li>
+                <li><img src="images/pc_gallary_01-100.jpg" alt=""></li>
+            </ul>
+        </section>
+
+
+        <section id="event" class="event">
+            <h2>
+                <img src="images/event@2x.png" alt="EVENT">
+            </h2>
+
+            <div class="event_block">
+                <ul>
+                    <li>
+                        <time datetime="2020-06-23">2020.06.23</time>
+                        <a href="/">7月はイベント出店のため0/0お休みします</a>
+                    </li>
+
+                    <li>
+                        <time datetime="2020-03-15">2020.03.15</time>
+                        <a href="/">春の新商品新発売。話題のあのブランドとコラボ</a>
+                    </li>
+
+                    <li>
+                        <time datetime="2020-02-06">2020.02.06</time>
+                        <a href="/">コーヒーの日で30%OFFイベントを開催[３日間限定]
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+
+        <section id="access" class="access">
+            <h2>
+                <img src="images/access@2x.png" alt="ACCESS">
+            </h2>
+            <div class="access_map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3243.3775561162406!2d139.72550871519903!3d35.61841774102186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188af46f74163d%3A0xb89abce13d2d9292!2z5pel5pys44OP44OgIOadseS6rOaUr-ekvg!5e0!3m2!1sja!2sjp!4v1668356599593!5m2!1sja!2sjp"
+                    style="border:0;" allowfullscreen loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">_</iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer_block">
+            <div class="footer_img">
+                <img src="images/design_cafe_logo_footer@2x.png" alt="DESIGN CAFE">
+            </div>
+            <p> " OPEN 18:00 / CLOSE 24:00"
+                <br>" 〒150-0022"
+                <br>" 東京都渋谷区東京南123デザインビルB1"
+                <br>" MAIL:info@designcafe.tokyo"
+            </p>
+            <!-- ダブルコーテーションがまたうまくいきません、、、 -->
         </div>
-        <div class="about_sentence">サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。
-            サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。
+        <div class="footer_copy">
+            <small>© 2021 DESIGN CAFE</small>
         </div>
-    </h3>
-
-    <h4 id="menu">
-        <div class="menu_logo"><img src="images/menu@2x.png" alt="MENU"></div>
-        <ul class="menu_pic">
-            <li><img src="images/drink_sp@2x-100.jpg" alt=""></li>
-            <li><img src="images/food_sp@2x-100.jpg" alt=""></li>
-            <li><img src="images/cake_sp@2x-100.jpg" alt=""></li>
-        </ul>
-        <ul class="menu_title">
-            <li>Drink</li>
-            <li>Food</li>
-            <li>Sweets</li>
-        </ul>
-        <ul class="menu_sentence">
-            <li>ドリンクメニューの概要を100文字程度で紹介します。素材やこだわりなどをアピールしていきます。</li>
-            <li>フードメニューの概要を100文字程度で紹介します。素材やこだわりなどをアピールしていきます。</li>
-            <li>スイーツメニューの概要を100文字程度で紹介します。素材やこだわりなどをアピールしていきます。</li>
-        </ul>
-
-    </h4>
-
-    <h5 id="gallery">
-        <div class="gallery_logo"><img src="images/gallery@2x.png" alt="GALLERY"></div>
-        <ul class="gallery_pic">
-            <li><img src="images/pc_gallary_05-100.jpg" alt=""></li>
-            <li><img src="images/pc_gallary_04-100.jpg" alt=""></li>
-            <li><img src="images/pc_gallary_03-100.jpg" alt=""></li>
-            <li><img src="images/pc_gallary_02-100.jpg" alt=""></li>
-            <li><img src="images/pc_gallary_01-100.jpg" alt=""></li>
-        </ul>
-    </h5>
-
-    <h6 id="event">
-        <div class="event_logo"><img src="images/event@2x.png" alt="EVENT"></div>
-        <ul class="event_box">
-            <li>2020.06.23<span>7月はイベント出店のため0/0お休みします</span></li>
-            <li>2020.03.15<span>春の新商品新発売。話題のあのブランドとコラボ</span></li>
-            <li>2020.02.06<span>コーヒーの日で30%OFFイベントを開催[3日間限定]</span></li>
-        </ul>
-
-    </h6>
-
-    <div class="access_logo"><img src="images/access@2x.png" alt="ACCESS"></div>
-    <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3243.3775561162406!2d139.72550871519903!3d35.61841774102186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188af46f74163d%3A0xb89abce13d2d9292!2z5pel5pys44OP44OgIOadseS6rOaUr-ekvg!5e0!3m2!1sja!2sjp!4v1668356599593!5m2!1sja!2sjp"
-        width="1920" height="471" style="border:0;" allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-
-    <footer id="footer">
-        <div class="footer_logo"><img src="images/design_cafe_logo_footer@2x.png" alt="DESIGN CAFE"></div>
-        <div class="footer_location">OPEN 18:00 / CLOSE 24:00
-            <br>〒150-0022
-            <br>東京都渋谷区東京南123デザインビルB1
-            <br>MAIL:info@designcafe.tokyo
-        </div>
-        <p class="footer_c">© 2021 DESIGN CAFE</p>
     </footer>
 
-    <div class="top"><img src="images/to_top@2x.png" alt="PAGETOP"></div>
+    <div class="pagetop" style="position: abusolute; bottom:240px">
+        <a href="#header">
+            <img src="images/to_top@2x.png" alt="PAGETOP">
+        </a>
+    </div>
+
+
+
+
+    <script>
+        $(function () {
+            //ここの中に記述
+            $('.sp_btn,sp_nav li').on('click', function () {
+                $('.sp_nav').fadeToggle();
+                $('.sp_btn').toggleClass('open');
+            });
+            $('.header_slider').slick({
+                // autoplay: true,
+                autoplaySpeed: 2000,
+                dots: true,
+                arrows: false,
+            });
+        });
+    </script>
+
+
 
 
 </body>
