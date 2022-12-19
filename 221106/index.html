@@ -26,32 +26,32 @@
             </div>
             <div>
                 <picture>
-                    <source media="(max-width:767px)" srcset="images/sp_main_vs2@2x-100.jpg">
+                    <source media="(max-width:767px)" srcset="images/sp_main_vs_2@2x-100.jpg">
                     <img src="images/slider_2.jpg" alt="店内の様子">
                 </picture>
             </div>
         </div>
 
         <div class="header_wrap">
-            <h1 class="header_logo"><a href=""><img src="images/design_cafe_logo_header@2x.png" alt="DESIGN CAFE"></a>
+            <h1 class="header_logo"><a href="/"><img src="images/design_cafe_logo_header@2x.png" alt="DESIGN CAFE"></a>
             </h1>
             <nav class="pc_nav">
                 <ul>
-                    <li><a href="">ABOUT US</a></li>
-                    <li><a href="">MENU</a></li>
-                    <li><a href="">GALLERY</a></li>
-                    <li><a href="">EVENT</a></li>
-                    <li><a href="">ACCESS</a></li>
+                    <li><a href="#about">ABOUT US</a></li>
+                    <li><a href="#menu">MENU</a></li>
+                    <li><a href="#gallery">GALLERY</a></li>
+                    <li><a href="#event">EVENT</a></li>
+                    <li><a href="#access">ACCESS</a></li>
                 </ul>
             </nav>
             <div class="sp_btn"><span></span></div>
             <nav class="sp_nav">
                 <ul>
-                    <li><a href="">ABOUT US</a></li>
-                    <li><a href="">MENU</a></li>
-                    <li><a href="">GALLERY</a></li>
-                    <li><a href="">EVENT</a></li>
-                    <li><a href="">ACCESS</a></li>
+                    <li><a href="#about">ABOUT US</a></li>
+                    <li><a href="#menu">MENU</a></li>
+                    <li><a href="#gallery">GALLERY</a></li>
+                    <li><a href="#event">EVENT</a></li>
+                    <li><a href="#access">ACCESS</a></li>
                 </ul>
             </nav>
 
@@ -64,8 +64,8 @@
             <p>ハッピーに溢れる1日を
                 <br>1杯のコーヒーから。
             </p>
-            <p>毎日を丁寧に大切に過ごしたい。だからこそ一杯一杯丁寧にコーヒーを入れ
-                <br>足を運んでくれるお客さんには落ち着く空間とこだわりのコーヒーを提供したい。
+            <p>毎日を丁寧に大切に過ごしたい。<br class="sp_only">だからこそ一杯一杯丁寧にコーヒーを入れ
+                <br>足を運んでくれるお客さんには落ち着く空間と<br class="sp_only">こだわりのコーヒーを提供したい。
             </p>
         </div>
 
@@ -133,13 +133,14 @@
             <h2>
                 <img src="images/gallery@2x.png" alt="GALLERY">
             </h2>
-            <ul class="gallery_pic">
-                <li><img src="images/pc_gallary_05-100.jpg" alt=""></li>
-                <li><img src="images/pc_gallary_04-100.jpg" alt=""></li>
-                <li><img src="images/pc_gallary_03-100.jpg" alt=""></li>
-                <li><img src="images/pc_gallary_02-100.jpg" alt=""></li>
-                <li><img src="images/pc_gallary_01-100.jpg" alt=""></li>
-            </ul>
+            <div class="gallery_pic">
+                <div><img src="images/pc_gallary_05-100.jpg" alt=""></div>
+                <div><img src="images/pc_gallary_04-100.jpg" alt=""></div>
+                <div><img src="images/pc_gallary_03-100.jpg" alt=""></div>
+                <div><img src="images/pc_gallary_02-100.jpg" alt=""></div>
+                <div><img src="images/pc_gallary_01-100.jpg" alt=""></div>
+                <div><img src="images/pc_gallary_01-100.jpg" alt=""></div>
+            </div>
         </section>
 
 
@@ -178,7 +179,7 @@
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3243.3775561162406!2d139.72550871519903!3d35.61841774102186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188af46f74163d%3A0xb89abce13d2d9292!2z5pel5pys44OP44OgIOadseS6rOaUr-ekvg!5e0!3m2!1sja!2sjp!4v1668356599593!5m2!1sja!2sjp"
                     style="border:0;" allowfullscreen loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">_</iframe>
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </section>
     </main>
@@ -188,10 +189,10 @@
             <div class="footer_img">
                 <img src="images/design_cafe_logo_footer@2x.png" alt="DESIGN CAFE">
             </div>
-            <p> " OPEN 18:00 / CLOSE 24:00"
-                <br>" 〒150-0022"
-                <br>" 東京都渋谷区東京南123デザインビルB1"
-                <br>" MAIL:info@designcafe.tokyo"
+            <p> OPEN 18:00 / CLOSE 24:00
+                <br>〒150-0022
+                <br>東京都渋谷区東京南123デザインビルB1
+                <br>MAIL:info@designcafe.tokyo
             </p>
             <!-- ダブルコーテーションがまたうまくいきません、、、 -->
         </div>
@@ -200,7 +201,7 @@
         </div>
     </footer>
 
-    <div class="pagetop" style="position: abusolute; bottom:240px">
+    <div class="pagetop">
         <a href="#header">
             <img src="images/to_top@2x.png" alt="PAGETOP">
         </a>
@@ -222,9 +223,23 @@
                 dots: true,
                 arrows: false,
             });
+
+            $('.gallery_pic').slick({
+                infinite: true,
+                slidesToShow: 5,
+                arrows: false,
+                responsive: [
+                    {
+                        breakpoint: 767,
+                        settings: {
+                            slidesToShow: 1,
+
+                        }
+                    },
+                ]
+            });
         });
     </script>
-
 
 
 
